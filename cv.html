@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CV — Affichage</title>
+    <link rel="stylesheet" href="cv.css" />
+</head>
+<body>
+<!-- Essaie d'abord d'afficher une image (CV.png / CV.jpg).
+     Si l'image échoue, on affiche automatiquement le PDF (CV.pdf). -->
+<img id="cvImage" src="CV.pdf" alt="CV" class="viewer"
+     onerror="this.style.display='none'; document.getElementById('cvPdf').style.display='block';" />
+
+<!-- Fallback : PDF -->
+<iframe id="cvPdf" class="viewer" src="CV.pdf" title="CV PDF" frameborder="0" style="display:none;"></iframe>
+
+<!-- Très léger script : si l'image n'existe pas mais tu as CV.jpg/jpeg, on tente ces noms -->
+<script>
+    (function(){
+        const img = document.getElementById('cvImage');
+        const tryNames = ['CV.png','CV.jpg','CV.jpeg','cv.png','cv.jpg','cv.jpeg'];
+        // If the image 404s, onerror fires and fallback shows PDF.
+        // If the browser tried CV.png only, attempt other filenames automatically once.
+        img.addEventListener('error', function onErr(){
+            // Already falling back to PDF (onerror inline). Try other names quickly before giving up:
+            const current = img.src.split('/').pop().toLowerCase();
+            for (const name of tryNames){
+                if (name === current) continue;
+                // attempt to load another candidate
+                img.src = name;
+                // stop after first trial — if it errors again the inline onerror will run and show PDF
+                break;
+            }
+            img.removeEventListener('error', onErr);
+        });
+    })();
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+html,body{
+    height:100%;
+    margin:0;
+    background:#000;
+}
+
+.viewer{
+    display:block;
+    width:100vw;
+    height:100vh;
+    border:0;
+    object-fit:contain; /* pour l'image */
+    background: #000;
+}
+
+#cvPdf{
+    width:100vw;
+    height:100vh;
+}

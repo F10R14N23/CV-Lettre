@@ -1,0 +1,101 @@
+/* --- RESET DE BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Helvetica", Arial, sans-serif;
+}
+
+/* --- FOND GLOBAL --- */
+body {
+    background: #d6d6d6;
+    padding: 40px 0;
+}
+
+/* --- TITRE PRINCIPAL --- */
+header h1 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+/* --- CONTENEUR DE LA LETTRE --- */
+.lettre {
+    width: 60%;
+    min-width: 650px;
+    margin: auto;
+    background: white;
+    padding: 50px 60px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+/* --- COORDONNÉES & ENTREPRISE --- */
+.coordonnees, .entreprise {
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.coordonnees strong,
+.entreprise strong {
+    font-weight: 700;
+}
+
+.entreprise {
+    margin-top: 25px;
+}
+
+/* --- DATE/VILLE --- */
+.date-ville {
+    text-align: right;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+/* --- OBJET --- */
+.objet {
+    margin-top: 30px;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+/* --- CORPS DU TEXTE --- */
+.corps {
+    margin-top: 25px;
+    font-size: 15px;
+    line-height: 26px;
+    text-align: justify;
+}
+
+.corps p {
+    margin-bottom: 18px;
+}
+
+/* --- SIGNATURE --- */
+.signature {
+    margin-top: 30px;
+    font-weight: 700;
+}
+
+/* --- BOUTON RETOUR AU CV --- */
+.back-link {
+    display: inline-block;
+    margin: 35px auto 0;
+    text-align: center;
+    text-decoration: none;
+
+    background: #EDF3F9;
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #3a4a5a;
+    border: 1px solid #d8e1ea;
+    transition: 0.2s ease;
+}
+
+.back-link:hover {
+    background: #e1e8f0;
+}
